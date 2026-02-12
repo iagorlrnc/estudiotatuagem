@@ -122,7 +122,7 @@ export function Booking({ onLoginClick }: BookingProps) {
         <div className="max-w-md mx-auto px-4 text-center">
           <User className="w-16 h-16 text-gold/60 mx-auto mb-4" />
           <h2 className="text-2xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent mb-4">
-            Faça login para agendar
+            Entre ou cadastre-se
           </h2>
           <p className="text-gray-400 mb-6">
             Você precisa estar autenticado para fazer um agendamento
@@ -131,7 +131,7 @@ export function Booking({ onLoginClick }: BookingProps) {
             onClick={onLoginClick}
             className="bg-gold text-dark-bg px-8 py-3 rounded-lg font-semibold hover:bg-gold-dark transition-colors"
           >
-            Fazer Login
+            Entrar
           </button>
         </div>
       </div>

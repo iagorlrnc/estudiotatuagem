@@ -124,14 +124,11 @@ export function Catalog() {
 
   return (
     <div className="min-h-screen bg-dark-bg pt-20">
-      <div className="bg-dark-secondary text-white py-12 sm:py-16 border-b border-gold/20">
+      <div className="bg-dark-secondary text-white py-8 sm:py-8 border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 pb-2 bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold pb-3 bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent leading-tight">
             Catálogo de Tatuagens
           </h1>
-          <p className="text-gray-300 text-base sm:text-lg">
-            Explore nosso portfólio tattoo
-          </p>
         </div>
       </div>
 

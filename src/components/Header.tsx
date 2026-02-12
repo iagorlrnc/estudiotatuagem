@@ -118,7 +118,7 @@ export function Header({
                 onClick={onLoginClick}
                 className="bg-gold text-dark-bg px-6 py-2 rounded-lg hover:bg-gold-dark transition-colors font-semibold"
               >
-                Login
+                Entrar
               </button>
             )}
           </div>

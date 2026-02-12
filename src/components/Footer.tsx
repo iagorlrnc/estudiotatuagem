@@ -23,15 +23,15 @@ export function Footer() {
             <div className="space-y-3 text-gray-400 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-gold" />
-                <span>(11) 99999-9999</span>
+                <span>(00) 00000-0000</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold" />
-                <span>contato@tattoostudio.com</span>
+                <span>contato@estudiotatuagem.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-gold" />
-                <span>São Paulo, SP</span>
+                <span>Palmas, TO</span>
               </div>
             </div>
           </div>
