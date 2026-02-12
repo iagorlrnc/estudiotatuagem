@@ -56,7 +56,7 @@ export function Header({
             className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent"
           >
             <span className="hidden sm:inline">Estúdio de Tatuagem</span>
-            <span className="sm:hidden">Tattoo Studio</span>
+            <span className="sm:hidden">Estúdio de Tatuagem</span>
           </button>
 
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
