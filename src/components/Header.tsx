@@ -53,12 +53,13 @@ export function Header({
         <div className="flex justify-between items-center py-4">
           <button
             onClick={() => onNavigate("home")}
-            className="text-2xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent"
+            className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent"
           >
-            Estúdio de Tatuagem
+            <span className="hidden sm:inline">Estúdio de Tatuagem</span>
+            <span className="sm:hidden">Tattoo Studio</span>
           </button>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             <button
               onClick={() => onNavigate("home")}
               className="text-white hover:text-gold transition-colors"
@@ -95,12 +96,12 @@ export function Header({
             )}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-4">
             {user ? (
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
                   <User className="w-5 h-5 text-gold" />
-                  <span className="text-sm text-white">
+                  <span className="text-xs xl:text-sm text-white truncate max-w-[150px] xl:max-w-[200px]">
                     {profile?.full_name || profile?.email}
                   </span>
                 </div>
@@ -124,7 +125,7 @@ export function Header({
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -135,7 +136,7 @@ export function Header({
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden py-4 space-y-4 bg-dark-secondary rounded-lg">
+          <div className="lg:hidden py-4 space-y-2 bg-dark-secondary rounded-lg mt-2">
             <button
               onClick={() => {
                 onNavigate("home")

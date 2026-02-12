@@ -152,9 +152,9 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
 
   return (
     <div className="min-h-screen bg-dark-bg pt-20">
-      <div className="bg-dark-secondary text-white py-8 border-b border-gold/20">
+      <div className="bg-dark-secondary text-white py-6 sm:py-8 border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
             Meus Agendamentos
           </h1>
           <p className="text-gray-400 mt-2">
@@ -163,13 +163,13 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
         {/* Filtros */}
-        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-4 mb-6">
-          <div className="flex flex-wrap gap-3">
+        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-3 sm:p-4 mb-4 sm:mb-6 overflow-x-auto">
+          <div className="flex flex-nowrap gap-2 sm:gap-3 min-w-max sm:min-w-0 sm:flex-wrap">
             <button
               onClick={() => setFilter("all")}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                 filter === "all"
                   ? "bg-gold text-dark-bg"
                   : "bg-dark-bg text-gray-400 hover:text-white"
@@ -179,7 +179,7 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
             </button>
             <button
               onClick={() => setFilter("pending")}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                 filter === "pending"
                   ? "bg-yellow-600 text-white"
                   : "bg-dark-bg text-gray-400 hover:text-white"
@@ -190,7 +190,7 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
             </button>
             <button
               onClick={() => setFilter("confirmed")}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                 filter === "confirmed"
                   ? "bg-green-600 text-white"
                   : "bg-dark-bg text-gray-400 hover:text-white"
@@ -201,7 +201,7 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
             </button>
             <button
               onClick={() => setFilter("completed")}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                 filter === "completed"
                   ? "bg-blue-600 text-white"
                   : "bg-dark-bg text-gray-400 hover:text-white"
@@ -212,7 +212,7 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
             </button>
             <button
               onClick={() => setFilter("cancelled")}
-              className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+              className={`px-3 sm:px-4 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap ${
                 filter === "cancelled"
                   ? "bg-red-600 text-white"
                   : "bg-dark-bg text-gray-400 hover:text-white"
@@ -242,7 +242,7 @@ export function MyAppointments({ onLoginClick }: MyAppointmentsProps) {
             {filteredAppointments.map((appointment) => (
               <div
                 key={appointment.id}
-                className="bg-dark-secondary rounded-lg border border-gold/20 p-6 hover:border-gold/50 transition-colors"
+                className="bg-dark-secondary rounded-lg border border-gold/20 p-4 sm:p-6 hover:border-gold/50 transition-colors"
               >
                 <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
                   <div className="flex items-start gap-3">

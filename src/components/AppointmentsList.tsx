@@ -134,10 +134,10 @@ export function AppointmentsList() {
   }
 
   return (
-    <div className="grid lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
       <div className="lg:col-span-2">
-        <div className="bg-dark-secondary rounded-lg p-6 border border-gold/20">
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+        <div className="bg-dark-secondary rounded-lg p-4 sm:p-6 border border-gold/20">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-4 sm:mb-6">
             <div className="flex-1 relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gold w-5 h-5" />
               <input
@@ -145,7 +145,7 @@ export function AppointmentsList() {
                 placeholder="Buscar por nome, email, telefone..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gold/20 bg-dark-bg text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gold/20 bg-dark-bg text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent text-sm sm:text-base"
               />
             </div>
             <div className="relative">
@@ -153,7 +153,7 @@ export function AppointmentsList() {
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="pl-10 pr-8 py-2 border border-gold/20 bg-dark-bg text-white rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent appearance-none"
+                className="pl-10 pr-8 py-2 border border-gold/20 bg-dark-bg text-white rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent appearance-none text-sm sm:text-base w-full sm:w-auto"
               >
                 <option value="all">Todos</option>
                 <option value="pending">Pendentes</option>
@@ -164,7 +164,7 @@ export function AppointmentsList() {
             </div>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2 sm:space-y-3">
             {filteredAppointments.length === 0 ? (
               <p className="text-center text-gray-400 py-8">
                 Nenhum agendamento encontrado
@@ -174,27 +174,29 @@ export function AppointmentsList() {
                 <div
                   key={appointment.id}
                   onClick={() => setSelectedAppointment(appointment)}
-                  className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                  className={`border-2 rounded-lg p-3 sm:p-4 cursor-pointer transition-all ${
                     selectedAppointment?.id === appointment.id
                       ? "border-gold bg-dark-bg"
                       : "border-gold/20 hover:border-gold/50 bg-dark-bg/50"
                   }`}
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <div>
-                      <h3 className="font-bold text-gold">
+                  <div className="flex items-start justify-between mb-2 gap-2">
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-gold text-sm sm:text-base truncate">
                         {appointment.full_name}
                       </h3>
-                      <p className="text-sm text-gray-400">
+                      <p className="text-xs sm:text-sm text-gray-400">
                         {new Date(
                           appointment.appointment_date + "T00:00:00",
                         ).toLocaleDateString("pt-BR")}{" "}
                         às {appointment.appointment_time.substring(0, 5)}
                       </p>
                     </div>
-                    {getStatusBadge(appointment.status)}
+                    <div className="flex-shrink-0">
+                      {getStatusBadge(appointment.status)}
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-300 line-clamp-2">
+                  <p className="text-xs sm:text-sm text-gray-300 line-clamp-2">
                     {appointment.tattoo_description}
                   </p>
                 </div>
@@ -205,11 +207,13 @@ export function AppointmentsList() {
       </div>
 
       <div className="lg:col-span-1">
-        <div className="bg-dark-secondary rounded-lg p-6 sticky top-24 border border-gold/20">
+        <div className="bg-dark-secondary rounded-lg p-4 sm:p-6 sticky top-24 border border-gold/20 max-h-[calc(100vh-8rem)] overflow-y-auto">
           {selectedAppointment ? (
             <div>
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-gold">Detalhes</h3>
+                <h3 className="text-base sm:text-lg font-bold text-gold">
+                  Detalhes
+                </h3>
                 <button
                   onClick={() => setSelectedAppointment(null)}
                   className="text-gold hover:text-gold-dark"
@@ -218,19 +222,23 @@ export function AppointmentsList() {
                 </button>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <label className="text-sm font-medium text-gold">
+                  <label className="text-xs sm:text-sm font-medium text-gold">
                     Cliente
                   </label>
-                  <p className="text-gray-300">
+                  <p className="text-sm sm:text-base text-gray-300 break-words">
                     {selectedAppointment.full_name}
                   </p>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-gold">Email</label>
-                  <p className="text-gray-300">{selectedAppointment.email}</p>
+                  <label className="text-xs sm:text-sm font-medium text-gold">
+                    Email
+                  </label>
+                  <p className="text-sm sm:text-base text-gray-300 break-all">
+                    {selectedAppointment.email}
+                  </p>
                 </div>
 
                 <div>
@@ -327,13 +335,13 @@ export function AppointmentsList() {
                   {getStatusBadge(selectedAppointment.status)}
                 </div>
 
-                <div className="pt-4 border-t border-gold/20 space-y-2">
+                <div className="pt-3 sm:pt-4 border-t border-gold/20 space-y-2">
                   {selectedAppointment.status === "pending" && (
                     <button
                       onClick={() =>
                         updateStatus(selectedAppointment.id, "confirmed")
                       }
-                      className="w-full flex items-center justify-center space-x-2 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors"
+                      className="w-full flex items-center justify-center space-x-2 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base"
                     >
                       <Check className="w-4 h-4" />
                       <span>Confirmar</span>

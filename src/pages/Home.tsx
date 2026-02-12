@@ -59,28 +59,28 @@ export function Home({ onNavigate }: HomeProps) {
           <p className="mb-4 text-sm uppercase tracking-widest text-gold animate-fade-in">
             Estúdio de Tatuagem
           </p>
-          <h1 className="mb-6 text-5xl md:text-7xl font-bold leading-tight text-white animate-fade-in">
+          <h1 className="mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight text-white animate-fade-in">
             Arte que conta
             <br />
             <span className="bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
               sua história
             </span>
           </h1>
-          <p className="mx-auto mb-8 max-w-xl text-lg text-gray-300 animate-fade-in">
+          <p className="mx-auto mb-8 max-w-xl text-base sm:text-lg lg:text-xl text-gray-300 animate-fade-in px-4">
             Transformamos suas ideias em obras de arte na pele. Cada traço é
             único, cada tatuagem é uma expressão da sua personalidade.
           </p>
-          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center animate-fade-in">
+          <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center animate-fade-in px-4">
             <button
               onClick={() => onNavigate("catalog")}
-              className="bg-gold-dark text-dark-bg px-8 py-3 rounded-lg font-semibold hover:bg-gold transition-colors inline-flex items-center gap-2 shadow-lg shadow-gold/50"
+              className="bg-gold-dark text-dark-bg px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gold transition-colors inline-flex items-center gap-2 shadow-lg shadow-gold/50 w-full sm:w-auto justify-center"
             >
               Ver Catálogo
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
               onClick={() => onNavigate("booking")}
-              className="bg-transparent border-2 border-gold text-gold px-8 py-3 rounded-lg font-semibold hover:bg-gold/10 transition-colors"
+              className="bg-transparent border-2 border-gold text-gold px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-gold/10 transition-colors w-full sm:w-auto"
             >
               Agendar Horário
             </button>
@@ -89,9 +89,9 @@ export function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-black">
+      <section className="py-12 sm:py-16 lg:py-24 bg-black">
         <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: Sparkles,
@@ -125,13 +125,13 @@ export function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* Gallery/Featured Tattoos Section */}
-      <section className="py-24 bg-dark-bg">
+      <section className="py-12 sm:py-16 lg:py-24 bg-dark-bg">
         <div className="container mx-auto px-4">
-          <div className="mb-12 text-center">
+          <div className="mb-8 sm:mb-12 text-center">
             <p className="mb-2 text-sm uppercase tracking-widest text-gold">
               Portfólio
             </p>
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
               Nossos Trabalhos
             </h2>
           </div>
@@ -147,7 +147,7 @@ export function Home({ onNavigate }: HomeProps) {
               </p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {featuredTattoos.map((tattoo) => (
                 <div
                   key={tattoo.id}
@@ -183,9 +183,9 @@ export function Home({ onNavigate }: HomeProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-dark-secondary border-t border-gold/20">
+      <section className="py-12 sm:py-16 lg:py-24 bg-dark-secondary border-t border-gold/20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-4xl font-bold text-white">
+          <h2 className="mb-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
             Pronto para sua próxima{" "}
             <span className="bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
               tatuagem

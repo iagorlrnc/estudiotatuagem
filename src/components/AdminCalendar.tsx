@@ -150,11 +150,11 @@ export function AdminCalendar() {
   }
 
   return (
-    <div className="grid lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
       <div className="lg:col-span-2">
-        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-6">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-bold text-white">
+        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-4 sm:p-6">
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
+            <h2 className="text-lg sm:text-xl font-bold text-white">
               {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
             </h2>
             <div className="flex space-x-2">
@@ -173,18 +173,18 @@ export function AdminCalendar() {
             </div>
           </div>
 
-          <div className="grid grid-cols-7 gap-2 mb-2">
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2">
             {dayNames.map((day) => (
               <div
                 key={day}
-                className="text-center font-semibold text-white text-sm py-2"
+                className="text-center font-semibold text-white text-xs sm:text-sm py-2"
               >
                 {day}
               </div>
             ))}
           </div>
 
-          <div className="grid grid-cols-7 gap-2">
+          <div className="grid grid-cols-7 gap-1 sm:gap-2">
             {getDaysInMonth().map((day, index) => {
               if (day === null) {
                 return <div key={`empty-${index}`} className="aspect-square" />
@@ -206,9 +206,11 @@ export function AdminCalendar() {
                   }`}
                 >
                   <div className="flex flex-col items-center justify-center h-full">
-                    <span className="font-semibold text-white">{day}</span>
+                    <span className="font-semibold text-white text-xs sm:text-base">
+                      {day}
+                    </span>
                     {count > 0 && (
-                      <span className="text-xs font-medium text-white">
+                      <span className="text-[10px] sm:text-xs font-medium text-white">
                         {count}
                       </span>
                     )}
@@ -218,7 +220,7 @@ export function AdminCalendar() {
             })}
           </div>
 
-          <div className="mt-6 flex items-center justify-center space-x-6 text-sm">
+          <div className="mt-4 sm:mt-6 flex items-center justify-center space-x-3 sm:space-x-6 text-xs sm:text-sm flex-wrap gap-2">
             <div className="flex items-center space-x-2">
               <div className="w-4 h-4 bg-dark-bg border-2 border-gold/30 rounded"></div>
               <span className="text-gray-400">Livre</span>
@@ -240,8 +242,8 @@ export function AdminCalendar() {
       </div>
 
       <div className="lg:col-span-1">
-        <div className="bg-dark-secondary rounded-lg p-6 border border-gold/20">
-          <h3 className="text-lg font-bold text-gold mb-4">
+        <div className="bg-dark-secondary rounded-lg p-4 sm:p-6 border border-gold/20 max-h-[calc(100vh-8rem)] overflow-y-auto">
+          <h3 className="text-base sm:text-lg font-bold text-gold mb-4">
             {selectedDate
               ? `Agendamentos - ${new Date(selectedDate + "T00:00:00").toLocaleDateString("pt-BR")}`
               : "Selecione uma data"}

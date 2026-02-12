@@ -124,22 +124,22 @@ export function Catalog() {
 
   return (
     <div className="min-h-screen bg-dark-bg pt-20">
-      <div className="bg-dark-secondary text-white py-16 border-b border-gold/20">
+      <div className="bg-dark-secondary text-white py-12 sm:py-16 border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 pb-2 bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 pb-2 bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent leading-tight">
             Catálogo de Tatuagens
           </h1>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-base sm:text-lg">
             Explore nosso portfólio tattoo
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-wrap gap-3 mb-8 justify-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center">
           <button
             onClick={() => setSelectedCategory(null)}
-            className={`px-6 py-2 rounded-full font-medium transition-colors ${
+            className={`px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition-colors ${
               selectedCategory === null
                 ? "bg-gold text-dark-bg"
                 : "bg-dark-secondary text-white border border-gold/30 hover:border-gold/70"
@@ -151,7 +151,7 @@ export function Catalog() {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-medium transition-colors ${
                 selectedCategory === category.id
                   ? "bg-gold text-dark-bg"
                   : "bg-dark-secondary text-white border border-gold/30 hover:border-gold/70"
@@ -169,13 +169,13 @@ export function Catalog() {
             </p>
           </div>
         ) : (
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 sm:gap-6">
             {tattoos.map((tattoo) => (
               <div
                 key={tattoo.id}
                 className="bg-dark-secondary rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/30 transition-all border border-gold/10 hover:border-gold/50"
               >
-                <div className="relative h-64">
+                <div className="relative aspect-square">
                   <img
                     src={tattoo.image_url}
                     alt={tattoo.title}

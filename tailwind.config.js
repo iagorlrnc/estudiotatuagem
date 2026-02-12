@@ -9,6 +9,11 @@ export default {
         "dark-bg": "#1A1A1A",
         "dark-secondary": "#2A2A2A",
       },
+      screens: {
+        xs: "475px",
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
     },
   },
   plugins: [],

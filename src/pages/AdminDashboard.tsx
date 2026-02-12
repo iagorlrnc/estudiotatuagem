@@ -110,9 +110,9 @@ export function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-dark-bg pt-20">
-      <div className="bg-dark-secondary text-white py-8 border-b border-gold/20">
+      <div className="bg-dark-secondary text-white py-6 sm:py-8 border-b border-gold/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent">
             Painel Administrativo
           </h1>
           <p className="text-gray-400 mt-2">
@@ -121,13 +121,13 @@ export function AdminDashboard() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-dark-secondary rounded-lg border border-gold/20 mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        <div className="bg-dark-secondary rounded-lg border border-gold/20 mb-6 overflow-x-auto">
           <div className="border-b border-gold/20">
-            <nav className="flex space-x-8 px-6">
+            <nav className="flex space-x-2 sm:space-x-4 lg:space-x-8 px-4 sm:px-6 min-w-max">
               <button
                 onClick={() => setActiveTab("dashboard")}
-                className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap ${
                   activeTab === "dashboard"
                     ? "border-gold text-gold"
                     : "border-transparent text-gray-400 hover:text-white hover:border-gold/50"
@@ -137,7 +137,7 @@ export function AdminDashboard() {
               </button>
               <button
                 onClick={() => setActiveTab("calendar")}
-                className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap ${
                   activeTab === "calendar"
                     ? "border-gold text-gold"
                     : "border-transparent text-gray-400 hover:text-white hover:border-gold/50"
@@ -147,7 +147,7 @@ export function AdminDashboard() {
               </button>
               <button
                 onClick={() => setActiveTab("appointments")}
-                className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap ${
                   activeTab === "appointments"
                     ? "border-gold text-gold"
                     : "border-transparent text-gray-400 hover:text-white hover:border-gold/50"
@@ -157,7 +157,7 @@ export function AdminDashboard() {
               </button>
               <button
                 onClick={() => setActiveTab("portfolio")}
-                className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                className={`py-3 sm:py-4 px-1 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap ${
                   activeTab === "portfolio"
                     ? "border-gold text-gold"
                     : "border-transparent text-gray-400 hover:text-white hover:border-gold/50"
@@ -177,7 +177,7 @@ export function AdminDashboard() {
               </div>
             ) : (
               <>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-6 mb-8">
                   <div className="bg-dark-secondary rounded-lg border border-gold/20 p-6 hover:border-gold/50 transition-colors hover:shadow-lg hover:shadow-gold/20">
                     <div className="flex items-center justify-between">
                       <div>

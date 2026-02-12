@@ -139,13 +139,13 @@ export function Booking({ onLoginClick }: BookingProps) {
   }
 
   return (
-    <div className="min-h-screen bg-dark-bg py-12 pt-32">
+    <div className="min-h-screen bg-dark-bg py-8 sm:py-12 pt-24 sm:pt-28 lg:pt-32">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-8">
-          <h1 className="text-3xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent mb-2">
+        <div className="bg-dark-secondary rounded-lg border border-gold/20 p-4 sm:p-6 lg:p-8">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gold via-gold-dark to-gold bg-clip-text text-transparent mb-2">
             Agendar Sessão de Tatuagem
           </h1>
-          <p className="text-gray-400 mb-8">
+          <p className="text-gray-400 mb-6 sm:mb-8 text-sm sm:text-base">
             Preencha o formulário abaixo com seus dados e preferências
           </p>
 
@@ -161,8 +161,8 @@ export function Booking({ onLoginClick }: BookingProps) {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-medium text-white mb-2">
                   <User className="w-4 h-4 inline mr-2 text-gold" />

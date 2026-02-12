@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  html {
+    @apply text-sm;
+  }
+
+  @media (min-width: 640px) {
+    html {
+      @apply text-base;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 2560px) {
+    html {
+      font-size: 20px;
+    }
+  }
+
+  /* Melhorias de acessibilidade para touch */
+  @media (pointer: coarse) {
+    button,
+    a,
+    input,
+    select,
+    textarea {
+      @apply min-h-[44px];
+    }
+  }
+}
+
+@layer utilities {
+  .container-safe {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+
+  .text-responsive {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .heading-responsive {
+    @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
+  }
+}
