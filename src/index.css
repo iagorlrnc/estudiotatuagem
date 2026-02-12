@@ -8,7 +8,11 @@
   }
 
   html {
-    @apply text-sm;
+    @apply text-sm bg-black;
+  }
+
+  body {
+    @apply bg-black;
   }
 
   @media (min-width: 640px) {

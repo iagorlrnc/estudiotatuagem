@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AuthProvider, useAuth } from "./contexts/AuthContext"
 import { Header } from "./components/Header"
+import { Footer } from "./components/Footer"
 import { AuthModal } from "./components/AuthModal"
 import { Home } from "./pages/Home"
 import { Catalog } from "./pages/Catalog"
@@ -24,22 +25,26 @@ function AppContent() {
   }
 
   return (
-    <div className="min-h-screen bg-dark-bg">
+    <div className="min-h-screen bg-dark-bg flex flex-col">
       <Header
         onNavigate={setCurrentPage}
         onLoginClick={() => setIsAuthModalOpen(true)}
         hideOnTop={currentPage === "home"}
       />
 
-      {currentPage === "home" && <Home onNavigate={setCurrentPage} />}
-      {currentPage === "catalog" && <Catalog />}
-      {currentPage === "booking" && (
-        <Booking onLoginClick={() => setIsAuthModalOpen(true)} />
-      )}
-      {currentPage === "appointments" && (
-        <MyAppointments onLoginClick={() => setIsAuthModalOpen(true)} />
-      )}
-      {currentPage === "admin" && <AdminDashboard />}
+      <main className="flex-1">
+        {currentPage === "home" && <Home onNavigate={setCurrentPage} />}
+        {currentPage === "catalog" && <Catalog />}
+        {currentPage === "booking" && (
+          <Booking onLoginClick={() => setIsAuthModalOpen(true)} />
+        )}
+        {currentPage === "appointments" && (
+          <MyAppointments onLoginClick={() => setIsAuthModalOpen(true)} />
+        )}
+        {currentPage === "admin" && <AdminDashboard />}
+      </main>
+
+      <Footer />
 
       <AuthModal
         isOpen={isAuthModalOpen}

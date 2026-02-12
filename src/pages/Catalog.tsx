@@ -173,7 +173,7 @@ export function Catalog() {
             {tattoos.map((tattoo) => (
               <div
                 key={tattoo.id}
-                className="bg-dark-secondary rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/30 transition-all border border-gold/10 hover:border-gold/50"
+                className="bg-dark-secondary rounded-lg overflow-hidden hover:shadow-lg hover:shadow-gold/30 transition-all border border-gold/10 hover:border-gold/50 max-w-xs sm:max-w-none mx-auto w-full"
               >
                 <div className="relative aspect-square">
                   <img
